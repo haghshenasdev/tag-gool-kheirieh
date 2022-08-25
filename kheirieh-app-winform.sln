@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.2017
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kheirieh-app-winform", "kheirieh-app-winform\kheirieh-app-winform.csproj", "{3980CF2E-2FF3-47E5-B652-D013A60A3DC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kheirieh.graphic", "..\kheirieh\kheirieh.graphic\kheirieh.graphic.csproj", "{241EDFFA-E5CD-4650-94B2-440C216DCE16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kheirieh.datalayer", "kheirieh.datalayer\kheirieh.datalayer.csproj", "{94DD37D0-3787-45BA-BEE3-C722C980AEB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kheirieh.utility", "kheirieh.utility\kheirieh.utility.csproj", "{0EB925CF-90FA-481A-A7EC-4EA17A1C0E76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kheirieh.business", "kheirieh.business\kheirieh.business.csproj", "{3EFA40F8-C743-44FA-8D30-7C98FF7CCE48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{57FF1AAC-8C03-4C14-81CD-2A073A0B6A1D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3980CF2E-2FF3-47E5-B652-D013A60A3DC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3980CF2E-2FF3-47E5-B652-D013A60A3DC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3980CF2E-2FF3-47E5-B652-D013A60A3DC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3980CF2E-2FF3-47E5-B652-D013A60A3DC5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{241EDFFA-E5CD-4650-94B2-440C216DCE16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{241EDFFA-E5CD-4650-94B2-440C216DCE16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{241EDFFA-E5CD-4650-94B2-440C216DCE16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{241EDFFA-E5CD-4650-94B2-440C216DCE16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94DD37D0-3787-45BA-BEE3-C722C980AEB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94DD37D0-3787-45BA-BEE3-C722C980AEB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94DD37D0-3787-45BA-BEE3-C722C980AEB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94DD37D0-3787-45BA-BEE3-C722C980AEB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0EB925CF-90FA-481A-A7EC-4EA17A1C0E76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0EB925CF-90FA-481A-A7EC-4EA17A1C0E76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0EB925CF-90FA-481A-A7EC-4EA17A1C0E76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0EB925CF-90FA-481A-A7EC-4EA17A1C0E76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EFA40F8-C743-44FA-8D30-7C98FF7CCE48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EFA40F8-C743-44FA-8D30-7C98FF7CCE48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EFA40F8-C743-44FA-8D30-7C98FF7CCE48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EFA40F8-C743-44FA-8D30-7C98FF7CCE48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57FF1AAC-8C03-4C14-81CD-2A073A0B6A1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57FF1AAC-8C03-4C14-81CD-2A073A0B6A1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57FF1AAC-8C03-4C14-81CD-2A073A0B6A1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57FF1AAC-8C03-4C14-81CD-2A073A0B6A1D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FBED50E-3474-4B7E-B9B8-C57956A30D8E}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3980CF2E-2FF3-47E5-B652-D013A60A3DC5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>kheirieh_app_winform</RootNamespace>
+    <AssemblyName>kheirieh-app-winform</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\500-500-logo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Zip, Version=22.7.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.Zip.22.7.0\lib\net40\Aspose.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\kheirieh.datalayer\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\kheirieh.datalayer\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\kerayeh\FRMEditOrAddKerayeh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\kerayeh\FRMEditOrAddKerayeh.Designer.cs">
+      <DependentUpon>FRMEditOrAddKerayeh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designing\FRMDesigning.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designing\FRMDesigning.Designer.cs">
+      <DependentUpon>FRMDesigning.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designing\FRMDesigningshow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designing\FRMDesigningshow.Designer.cs">
+      <DependentUpon>FRMDesigningshow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Designing\FRMInestallTarh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Designing\FRMInestallTarh.Designer.cs">
+      <DependentUpon>FRMInestallTarh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\kerayeh\FRMlistKerayeh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\kerayeh\FRMlistKerayeh.Designer.cs">
+      <DependentUpon>FRMlistKerayeh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMMultiSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMMultiSelect.Designer.cs">
+      <DependentUpon>FRMMultiSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMOnlinePrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMOnlinePrint.Designer.cs">
+      <DependentUpon>FRMOnlinePrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\FRMReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\FRMReport.Designer.cs">
+      <DependentUpon>FRMReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FRMSeting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMSeting.Designer.cs">
+      <DependentUpon>FRMSeting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="waiting form\FRMwait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="waiting form\FRMwait.Designer.cs">
+      <DependentUpon>FRMwait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="show.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="show.Designer.cs">
+      <DependentUpon>show.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SmartPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SmartPrint.Designer.cs">
+      <DependentUpon>SmartPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="waiting form\wait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="waiting form\wait.Designer.cs">
+      <DependentUpon>wait.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\kerayeh\FRMEditOrAddKerayeh.resx">
+      <DependentUpon>FRMEditOrAddKerayeh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designing\FRMDesigning.resx">
+      <DependentUpon>FRMDesigning.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designing\FRMDesigningshow.resx">
+      <DependentUpon>FRMDesigningshow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Designing\FRMInestallTarh.resx">
+      <DependentUpon>FRMInestallTarh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\kerayeh\FRMlistKerayeh.resx">
+      <DependentUpon>FRMlistKerayeh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMMultiSelect.resx">
+      <DependentUpon>FRMMultiSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMOnlinePrint.resx">
+      <DependentUpon>FRMOnlinePrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\FRMReport.resx">
+      <DependentUpon>FRMReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMSeting.resx">
+      <DependentUpon>FRMSeting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="waiting form\FRMwait.resx">
+      <DependentUpon>FRMwait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="show.resx">
+      <DependentUpon>show.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SmartPrint.resx">
+      <DependentUpon>SmartPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="waiting form\wait.resx">
+      <DependentUpon>wait.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\kheirieh\kheirieh.graphic\kheirieh.graphic.csproj">
+      <Project>{241edffa-e5cd-4650-94b2-440c216dce16}</Project>
+      <Name>kheirieh.graphic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\kheirieh.datalayer\kheirieh.datalayer.csproj">
+      <Project>{94dd37d0-3787-45ba-bee3-c722c980aeb0}</Project>
+      <Name>kheirieh.datalayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\kheirieh.utility\kheirieh.utility.csproj">
+      <Project>{0eb925cf-90fa-481a-a7ec-4ea17a1c0e76}</Project>
+      <Name>kheirieh.utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\500-500.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\500-500-logo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splashscreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loding.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loding2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\تاج گل.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marhoom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\انبارداری.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\200-200.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="app_kheiriehModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="kerayeh">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="marhom" Type="int" Nullable="false" />
+          <Property Name="usertraf" Type="int" Nullable="false" />
+          <Property Name="tarh" Type="int" />
+          <Property Name="type" Type="int" Nullable="false" />
+          <Property Name="ispardakht" Type="int" />
+          <Property Name="amountpay" Type="int" />
+          <Property Name="date" Type="date" Nullable="false" />
+          <Property Name="count" Type="int" />
+        </EntityType>
+        <EntityType Name="kheiriehinfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="adres" Type="varchar" MaxLength="250" />
+          <Property Name="phone" Type="varchar" MaxLength="150" />
+          <Property Name="site" Type="varchar" MaxLength="150" />
+          <Property Name="email" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="marhoom">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="persons">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="50" />
+          <Property Name="adres" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="setingapp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="value" Type="varchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="taj">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="typename" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="amount" Type="int" Nullable="false" />
+          <Property Name="description" Type="varchar" MaxLength="250" />
+          <Property Name="count" Type="int" />
+        </EntityType>
+        <EntityType Name="templates">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="path" Type="varchar" MaxLength="250" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_kerayeh_marhoom">
+          <End Role="marhoom" Type="Self.marhoom" Multiplicity="1" />
+          <End Role="kerayeh" Type="Self.kerayeh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="marhoom">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kerayeh">
+              <PropertyRef Name="marhom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kerayeh_persons">
+          <End Role="persons" Type="Self.persons" Multiplicity="1" />
+          <End Role="kerayeh" Type="Self.kerayeh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="persons">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kerayeh">
+              <PropertyRef Name="usertraf" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kerayeh_taj">
+          <End Role="taj" Type="Self.taj" Multiplicity="1" />
+          <End Role="kerayeh" Type="Self.kerayeh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="taj">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kerayeh">
+              <PropertyRef Name="type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kerayeh_templates">
+          <End Role="templates" Type="Self.templates" Multiplicity="0..1" />
+          <End Role="kerayeh" Type="Self.kerayeh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="templates">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kerayeh">
+              <PropertyRef Name="tarh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="app_kheiriehModelStoreContainer">
+          <EntitySet Name="kerayeh" EntityType="Self.kerayeh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kheiriehinfo" EntityType="Self.kheiriehinfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="marhoom" EntityType="Self.marhoom" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="persons" EntityType="Self.persons" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="setingapp" EntityType="Self.setingapp" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="taj" EntityType="Self.taj" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="templates" EntityType="Self.templates" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_kerayeh_marhoom" Association="Self.FK_kerayeh_marhoom">
+            <End Role="marhoom" EntitySet="marhoom" />
+            <End Role="kerayeh" EntitySet="kerayeh" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kerayeh_persons" Association="Self.FK_kerayeh_persons">
+            <End Role="persons" EntitySet="persons" />
+            <End Role="kerayeh" EntitySet="kerayeh" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kerayeh_taj" Association="Self.FK_kerayeh_taj">
+            <End Role="taj" EntitySet="taj" />
+            <End Role="kerayeh" EntitySet="kerayeh" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kerayeh_templates" Association="Self.FK_kerayeh_templates">
+            <End Role="templates" EntitySet="templates" />
+            <End Role="kerayeh" EntitySet="kerayeh" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="app_kheiriehModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="marhoom">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="date" Type="DateTime" Precision="0" Nullable="false" />
+          <NavigationProperty Name="kerayehs" Relationship="app_kheiriehModel.FK_kerayeh_marhoom1" FromRole="marhoom" ToRole="kerayeh" />
+        </EntityType>
+        <EntityType Name="person">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="adres" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="kerayehs" Relationship="app_kheiriehModel.FK_kerayeh_persons" FromRole="person" ToRole="kerayeh" />
+        </EntityType>
+        <EntityContainer Name="app_kheiriehEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="marhooms" EntityType="Self.marhoom" />
+          <EntitySet Name="persons" EntityType="Self.person" />
+          <EntitySet Name="tajs" EntityType="app_kheiriehModel.taj" />
+          <EntitySet Name="kerayehs" EntityType="app_kheiriehModel.kerayeh" />
+          <EntitySet Name="kheiriehinfoes" EntityType="app_kheiriehModel.kheiriehinfo" />
+          <EntitySet Name="setingapps" EntityType="app_kheiriehModel.setingapp" />
+          <EntitySet Name="templates" EntityType="app_kheiriehModel.template" />
+          <AssociationSet Name="FK_kerayeh_persons" Association="app_kheiriehModel.FK_kerayeh_persons">
+            <End Role="person" EntitySet="persons" />
+            <End Role="kerayeh" EntitySet="kerayehs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kerayeh_taj" Association="app_kheiriehModel.FK_kerayeh_taj">
+            <End Role="taj" EntitySet="tajs" />
+            <End Role="kerayeh" EntitySet="kerayehs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kerayeh_templates" Association="app_kheiriehModel.FK_kerayeh_templates">
+            <End Role="template" EntitySet="templates" />
+            <End Role="kerayeh" EntitySet="kerayehs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_kerayeh_marhoom1" Association="app_kheiriehModel.FK_kerayeh_marhoom1">
+            <End Role="marhoom" EntitySet="marhooms" />
+            <End Role="kerayeh" EntitySet="kerayehs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="taj">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="typename" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="amount" Type="Int32" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="count" Type="Int32" />
+          <NavigationProperty Name="kerayehs" Relationship="app_kheiriehModel.FK_kerayeh_taj" FromRole="taj" ToRole="kerayeh" />
+        </EntityType>
+        <EntityType Name="kerayeh">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="usertraf" Type="Int32" Nullable="false" />
+          <Property Name="tarh" Type="Int32" />
+          <Property Name="type" Type="Int32" Nullable="false" />
+          <Property Name="ispardakht" Type="Int32" />
+          <Property Name="amountpay" Type="Int32" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="count" Type="Int32" />
+          <NavigationProperty Name="person" Relationship="app_kheiriehModel.FK_kerayeh_persons" FromRole="kerayeh" ToRole="person" />
+          <NavigationProperty Name="taj" Relationship="app_kheiriehModel.FK_kerayeh_taj" FromRole="kerayeh" ToRole="taj" />
+          <NavigationProperty Name="template" Relationship="app_kheiriehModel.FK_kerayeh_templates" FromRole="kerayeh" ToRole="template" />
+          <Property Name="marhom" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="marhoom1" Relationship="app_kheiriehModel.FK_kerayeh_marhoom1" FromRole="kerayeh" ToRole="marhoom" />
+        </EntityType>
+        <EntityType Name="kheiriehinfo">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="adres" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="site" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="setingapp">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="value" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="template">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="path" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="kerayehs" Relationship="app_kheiriehModel.FK_kerayeh_templates" FromRole="template" ToRole="kerayeh" />
+        </EntityType>
+        <Association Name="FK_kerayeh_persons">
+          <End Type="app_kheiriehModel.person" Role="person" Multiplicity="1" />
+          <End Type="app_kheiriehModel.kerayeh" Role="kerayeh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="person">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kerayeh">
+              <PropertyRef Name="usertraf" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kerayeh_taj">
+          <End Type="app_kheiriehModel.taj" Role="taj" Multiplicity="1" />
+          <End Type="app_kheiriehModel.kerayeh" Role="kerayeh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="taj">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kerayeh">
+              <PropertyRef Name="type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kerayeh_templates">
+          <End Type="app_kheiriehModel.template" Role="template" Multiplicity="0..1" />
+          <End Type="app_kheiriehModel.kerayeh" Role="kerayeh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="template">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kerayeh">
+              <PropertyRef Name="tarh" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_kerayeh_marhoom1">
+          <End Type="app_kheiriehModel.marhoom" Role="marhoom" Multiplicity="1" />
+          <End Type="app_kheiriehModel.kerayeh" Role="kerayeh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="marhoom">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="kerayeh">
+              <PropertyRef Name="marhom" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="app_kheiriehModelStoreContainer" CdmEntityContainer="app_kheiriehEntities">
+          <EntitySetMapping Name="marhooms">
+            <EntityTypeMapping TypeName="app_kheiriehModel.marhoom">
+              <MappingFragment StoreEntitySet="marhoom">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="persons">
+            <EntityTypeMapping TypeName="app_kheiriehModel.person">
+              <MappingFragment StoreEntitySet="persons">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tajs">
+            <EntityTypeMapping TypeName="app_kheiriehModel.taj">
+              <MappingFragment StoreEntitySet="taj">
+                <ScalarProperty Name="count" ColumnName="count" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="typename" ColumnName="typename" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kerayehs">
+            <EntityTypeMapping TypeName="app_kheiriehModel.kerayeh">
+              <MappingFragment StoreEntitySet="kerayeh">
+                <ScalarProperty Name="marhom" ColumnName="marhom" />
+                <ScalarProperty Name="count" ColumnName="count" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="amountpay" ColumnName="amountpay" />
+                <ScalarProperty Name="ispardakht" ColumnName="ispardakht" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="tarh" ColumnName="tarh" />
+                <ScalarProperty Name="usertraf" ColumnName="usertraf" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kheiriehinfoes">
+            <EntityTypeMapping TypeName="app_kheiriehModel.kheiriehinfo">
+              <MappingFragment StoreEntitySet="kheiriehinfo">
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="site" ColumnName="site" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="setingapps">
+            <EntityTypeMapping TypeName="app_kheiriehModel.setingapp">
+              <MappingFragment StoreEntitySet="setingapp">
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="templates">
+            <EntityTypeMapping TypeName="app_kheiriehModel.template">
+              <MappingFragment StoreEntitySet="templates">
+                <ScalarProperty Name="path" ColumnName="path" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
