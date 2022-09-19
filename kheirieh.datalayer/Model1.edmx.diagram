@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="14cec75db77547a786fedb711116ee5d" Name="Diagram1">
+        <EntityTypeShape EntityType="app_kheiriehModel.marhoom" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="app_kheiriehModel.person" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="app_kheiriehModel.taj" Width="1.5" PointX="0.75" PointY="3.625" />
+        <EntityTypeShape EntityType="app_kheiriehModel.kerayeh" Width="1.5" PointX="3.375" PointY="3.375" />
+        <EntityTypeShape EntityType="app_kheiriehModel.kheiriehinfo" Width="1.5" PointX="5.75" PointY="5.125" />
+        <EntityTypeShape EntityType="app_kheiriehModel.setingapp" Width="1.5" PointX="5.75" PointY="3.375" />
+        <EntityTypeShape EntityType="app_kheiriehModel.template" Width="1.5" PointX="0.75" PointY="6.125" />
+        <AssociationConnector Association="app_kheiriehModel.FK_kerayeh_persons" />
+        <AssociationConnector Association="app_kheiriehModel.FK_kerayeh_taj" />
+        <AssociationConnector Association="app_kheiriehModel.FK_kerayeh_templates" />
+        <AssociationConnector Association="app_kheiriehModel.FK_kerayeh_marhoom1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
