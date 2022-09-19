@@ -7,7 +7,7 @@
       <Diagram DiagramId="14cec75db77547a786fedb711116ee5d" Name="Diagram1">
         <EntityTypeShape EntityType="app_kheiriehModel.marhoom" Width="1.5" PointX="5.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="app_kheiriehModel.person" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="app_kheiriehModel.taj" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="app_kheiriehModel.taj" Width="1.5" PointX="0.75" PointY="3.625" />
         <EntityTypeShape EntityType="app_kheiriehModel.kerayeh" Width="1.5" PointX="3.375" PointY="3.375" />
         <EntityTypeShape EntityType="app_kheiriehModel.kheiriehinfo" Width="1.5" PointX="5.75" PointY="5.125" />
         <EntityTypeShape EntityType="app_kheiriehModel.setingapp" Width="1.5" PointX="5.75" PointY="3.375" />

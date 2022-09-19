@@ -51,12 +51,10 @@ namespace kheirieh_app_winform
         private void btnAnalise_Click(object sender, EventArgs e)
         {
             treeView1.Nodes.Clear();
-
+            checkedList.Items.Clear();
             using (UnitOfWork db = new UnitOfWork())
             {
                 var mdate = db.KerayehRepository.Get();
-
-                checkedList.Items.Clear();
 
                 int curentuserid = 0;
                 foreach (var item in mdate)
@@ -97,15 +95,13 @@ namespace kheirieh_app_winform
 
         private void progssesbar(int count)
         {
-            int stepvalue = 100 / count;
-            if (progressBar1.Value + stepvalue >= 100)
-            {
+            progressBar1.Maximum = count;
+
+            if (progressBar1.Value >= count)
                 progressBar1.Value = 0;
-            }
-            else
-            {
-                progressBar1.Value += stepvalue;
-            }
+
+            progressBar1.Value += 1;
+
         }
 
         private void btnextarct_Click(object sender, EventArgs e)
@@ -141,6 +137,7 @@ namespace kheirieh_app_winform
                         string curentpname = "";
                         foreach (var i in kerahbymarhoomname)
                         {
+                            if (i.usertraf == null) continue;
                             string nameperson = db.PersonRepository.GetByID(i.usertraf).name;
                             if (curentpname != nameperson)
                             {
@@ -174,7 +171,7 @@ namespace kheirieh_app_winform
                     {
                         print.print(get_tarh(marhoomname.Text, personname.Text, tarh), false);
                     }
-                    progssesbar(marhoomname.GetNodeCount(true));
+                    progssesbar(marhoomname.GetNodeCount(false));
                 }
             }
 

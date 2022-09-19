@@ -131,5 +131,10 @@ namespace kheirieh_app_winform
             }
                 
         }
+
+        private void dgtarhs_CellBorderStyleChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

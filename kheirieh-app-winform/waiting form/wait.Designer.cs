@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(260, 111);
+            this.ClientSize = new System.Drawing.Size(250, 100);
             this.Font = new System.Drawing.Font("A Iranian Sans", 9F);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "wait";

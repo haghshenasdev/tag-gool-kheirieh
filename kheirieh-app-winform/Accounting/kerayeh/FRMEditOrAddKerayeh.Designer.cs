@@ -31,12 +31,16 @@
             this.btnsave = new System.Windows.Forms.Button();
             this.btncancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnChoseMarhoom = new System.Windows.Forms.Button();
             this.txtmName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnChosePerson = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txttName = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnChoseTarh = new System.Windows.Forms.Button();
+            this.btnchoseType = new System.Windows.Forms.Button();
             this.dateshow = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.txttarh = new System.Windows.Forms.TextBox();
@@ -51,6 +55,7 @@
             this.ispardakht = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnDelTarh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -61,17 +66,17 @@
             // 
             // btnsave
             // 
-            this.btnsave.Location = new System.Drawing.Point(244, 577);
+            this.btnsave.Location = new System.Drawing.Point(244, 537);
             this.btnsave.Name = "btnsave";
             this.btnsave.Size = new System.Drawing.Size(140, 23);
             this.btnsave.TabIndex = 0;
-            this.btnsave.Text = "ذخیره تغییرات";
+            this.btnsave.Text = "افزودن";
             this.btnsave.UseVisualStyleBackColor = true;
             this.btnsave.Click += new System.EventHandler(this.btnsave_Click);
             // 
             // btncancel
             // 
-            this.btncancel.Location = new System.Drawing.Point(98, 577);
+            this.btncancel.Location = new System.Drawing.Point(98, 537);
             this.btncancel.Name = "btncancel";
             this.btncancel.Size = new System.Drawing.Size(140, 23);
             this.btncancel.TabIndex = 1;
@@ -81,26 +86,38 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnChoseMarhoom);
             this.groupBox1.Controls.Add(this.txtmName);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(12, 232);
+            this.groupBox1.Location = new System.Drawing.Point(12, 204);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(446, 73);
+            this.groupBox1.Size = new System.Drawing.Size(446, 81);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "اطلاعات مرحوم";
             // 
+            // btnChoseMarhoom
+            // 
+            this.btnChoseMarhoom.Location = new System.Drawing.Point(6, 35);
+            this.btnChoseMarhoom.Name = "btnChoseMarhoom";
+            this.btnChoseMarhoom.Size = new System.Drawing.Size(88, 23);
+            this.btnChoseMarhoom.TabIndex = 11;
+            this.btnChoseMarhoom.Text = "انتخاب";
+            this.btnChoseMarhoom.UseVisualStyleBackColor = true;
+            this.btnChoseMarhoom.Click += new System.EventHandler(this.btnChoseMarhoom_Click);
+            // 
             // txtmName
             // 
-            this.txtmName.Location = new System.Drawing.Point(6, 32);
+            this.txtmName.Enabled = false;
+            this.txtmName.Location = new System.Drawing.Point(100, 36);
             this.txtmName.Name = "txtmName";
-            this.txtmName.Size = new System.Drawing.Size(356, 21);
+            this.txtmName.Size = new System.Drawing.Size(262, 21);
             this.txtmName.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(368, 35);
+            this.label2.Location = new System.Drawing.Point(368, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(31, 14);
             this.label2.TabIndex = 2;
@@ -108,14 +125,25 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnChosePerson);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txttName);
-            this.groupBox2.Location = new System.Drawing.Point(12, 327);
+            this.groupBox2.Location = new System.Drawing.Point(12, 302);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(446, 59);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "اطلاعات طرف";
+            // 
+            // btnChosePerson
+            // 
+            this.btnChosePerson.Location = new System.Drawing.Point(6, 23);
+            this.btnChosePerson.Name = "btnChosePerson";
+            this.btnChosePerson.Size = new System.Drawing.Size(88, 23);
+            this.btnChosePerson.TabIndex = 12;
+            this.btnChosePerson.Text = "انتخاب";
+            this.btnChosePerson.UseVisualStyleBackColor = true;
+            this.btnChosePerson.Click += new System.EventHandler(this.btnChosePerson_Click);
             // 
             // label1
             // 
@@ -128,13 +156,17 @@
             // 
             // txttName
             // 
-            this.txttName.Location = new System.Drawing.Point(6, 24);
+            this.txttName.Enabled = false;
+            this.txttName.Location = new System.Drawing.Point(100, 24);
             this.txttName.Name = "txttName";
-            this.txttName.Size = new System.Drawing.Size(356, 21);
+            this.txttName.Size = new System.Drawing.Size(262, 21);
             this.txttName.TabIndex = 0;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnDelTarh);
+            this.groupBox3.Controls.Add(this.btnChoseTarh);
+            this.groupBox3.Controls.Add(this.btnchoseType);
             this.groupBox3.Controls.Add(this.dateshow);
             this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Controls.Add(this.txttarh);
@@ -144,10 +176,30 @@
             this.groupBox3.Controls.Add(this.label3);
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(446, 214);
+            this.groupBox3.Size = new System.Drawing.Size(446, 186);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "اطلاعات چاپ";
+            // 
+            // btnChoseTarh
+            // 
+            this.btnChoseTarh.Location = new System.Drawing.Point(6, 130);
+            this.btnChoseTarh.Name = "btnChoseTarh";
+            this.btnChoseTarh.Size = new System.Drawing.Size(88, 23);
+            this.btnChoseTarh.TabIndex = 10;
+            this.btnChoseTarh.Text = "انتخاب";
+            this.btnChoseTarh.UseVisualStyleBackColor = true;
+            this.btnChoseTarh.Click += new System.EventHandler(this.btnChoseTarh_Click);
+            // 
+            // btnchoseType
+            // 
+            this.btnchoseType.Location = new System.Drawing.Point(6, 97);
+            this.btnchoseType.Name = "btnchoseType";
+            this.btnchoseType.Size = new System.Drawing.Size(88, 23);
+            this.btnchoseType.TabIndex = 9;
+            this.btnchoseType.Text = "انتخاب";
+            this.btnchoseType.UseVisualStyleBackColor = true;
+            this.btnchoseType.Click += new System.EventHandler(this.btnchoseType_Click);
             // 
             // dateshow
             // 
@@ -168,16 +220,18 @@
             // 
             // txttarh
             // 
-            this.txttarh.Location = new System.Drawing.Point(6, 130);
+            this.txttarh.Enabled = false;
+            this.txttarh.Location = new System.Drawing.Point(194, 130);
             this.txttarh.Name = "txttarh";
-            this.txttarh.Size = new System.Drawing.Size(356, 21);
+            this.txttarh.Size = new System.Drawing.Size(168, 21);
             this.txttarh.TabIndex = 6;
             // 
             // txttype
             // 
-            this.txttype.Location = new System.Drawing.Point(6, 99);
+            this.txttype.Enabled = false;
+            this.txttype.Location = new System.Drawing.Point(100, 99);
             this.txttype.Name = "txttype";
-            this.txttype.Size = new System.Drawing.Size(356, 21);
+            this.txttype.Size = new System.Drawing.Size(262, 21);
             this.txttype.TabIndex = 5;
             // 
             // label7
@@ -215,7 +269,7 @@
             this.groupBox4.Controls.Add(this.ispardakht);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.label5);
-            this.groupBox4.Location = new System.Drawing.Point(12, 432);
+            this.groupBox4.Location = new System.Drawing.Point(12, 377);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(446, 127);
             this.groupBox4.TabIndex = 3;
@@ -226,13 +280,23 @@
             // 
             this.nCount.Location = new System.Drawing.Point(6, 57);
             this.nCount.Maximum = new decimal(new int[] {
-            1000000000,
+            10000,
+            0,
+            0,
+            0});
+            this.nCount.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
             this.nCount.Name = "nCount";
             this.nCount.Size = new System.Drawing.Size(356, 21);
             this.nCount.TabIndex = 11;
+            this.nCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label8
             // 
@@ -283,11 +347,21 @@
             this.label5.TabIndex = 2;
             this.label5.Text = "مبلغ :";
             // 
+            // btnDelTarh
+            // 
+            this.btnDelTarh.Location = new System.Drawing.Point(100, 130);
+            this.btnDelTarh.Name = "btnDelTarh";
+            this.btnDelTarh.Size = new System.Drawing.Size(88, 23);
+            this.btnDelTarh.TabIndex = 11;
+            this.btnDelTarh.Text = "حذف";
+            this.btnDelTarh.UseVisualStyleBackColor = true;
+            this.btnDelTarh.Click += new System.EventHandler(this.btnDelTarh_Click);
+            // 
             // FRMEditOrAddKerayeh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(470, 612);
+            this.ClientSize = new System.Drawing.Size(470, 575);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -299,7 +373,7 @@
             this.Name = "FRMEditOrAddKerayeh";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "ویرایش کرایه";
+            this.Text = "افزودن کرایه جدید";
             this.Load += new System.EventHandler(this.FRMEditOrAddKerayeh_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -340,5 +414,10 @@
         private System.Windows.Forms.NumericUpDown nAmount;
         private System.Windows.Forms.NumericUpDown nCount;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnChoseMarhoom;
+        private System.Windows.Forms.Button btnChosePerson;
+        private System.Windows.Forms.Button btnChoseTarh;
+        private System.Windows.Forms.Button btnchoseType;
+        private System.Windows.Forms.Button btnDelTarh;
     }
 }

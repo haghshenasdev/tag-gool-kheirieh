@@ -11,9 +11,9 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="marhom" Type="int" Nullable="false" />
-          <Property Name="usertraf" Type="int" Nullable="false" />
+          <Property Name="usertraf" Type="int" />
           <Property Name="tarh" Type="int" />
-          <Property Name="type" Type="int" Nullable="false" />
+          <Property Name="type" Type="int" />
           <Property Name="ispardakht" Type="int" />
           <Property Name="amountpay" Type="int" />
           <Property Name="date" Type="date" Nullable="false" />
@@ -74,7 +74,9 @@
           <Property Name="path" Type="varchar" MaxLength="250" Nullable="false" />
         </EntityType>
         <Association Name="FK_kerayeh_marhoom">
-          <End Role="marhoom" Type="Self.marhoom" Multiplicity="1" />
+          <End Role="marhoom" Type="Self.marhoom" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
           <End Role="kerayeh" Type="Self.kerayeh" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="marhoom">
@@ -86,7 +88,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_kerayeh_persons">
-          <End Role="persons" Type="Self.persons" Multiplicity="1" />
+          <End Role="persons" Type="Self.persons" Multiplicity="0..1" />
           <End Role="kerayeh" Type="Self.kerayeh" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="persons">
@@ -98,7 +100,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_kerayeh_taj">
-          <End Role="taj" Type="Self.taj" Multiplicity="1" />
+          <End Role="taj" Type="Self.taj" Multiplicity="0..1" />
           <End Role="kerayeh" Type="Self.kerayeh" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="taj">
@@ -210,9 +212,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="usertraf" Type="Int32" Nullable="false" />
+          <Property Name="usertraf" Type="Int32" />
           <Property Name="tarh" Type="Int32" />
-          <Property Name="type" Type="Int32" Nullable="false" />
+          <Property Name="type" Type="Int32" />
           <Property Name="ispardakht" Type="Int32" />
           <Property Name="amountpay" Type="Int32" />
           <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
@@ -252,7 +254,7 @@
           <NavigationProperty Name="kerayehs" Relationship="app_kheiriehModel.FK_kerayeh_templates" FromRole="template" ToRole="kerayeh" />
         </EntityType>
         <Association Name="FK_kerayeh_persons">
-          <End Type="app_kheiriehModel.person" Role="person" Multiplicity="1" />
+          <End Type="app_kheiriehModel.person" Role="person" Multiplicity="0..1" />
           <End Type="app_kheiriehModel.kerayeh" Role="kerayeh" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="person">
@@ -264,7 +266,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_kerayeh_taj">
-          <End Type="app_kheiriehModel.taj" Role="taj" Multiplicity="1" />
+          <End Type="app_kheiriehModel.taj" Role="taj" Multiplicity="0..1" />
           <End Type="app_kheiriehModel.kerayeh" Role="kerayeh" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="taj">

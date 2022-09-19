@@ -411,6 +411,7 @@
             this.حسابداریToolStripMenuItem.Name = "حسابداریToolStripMenuItem";
             this.حسابداریToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.حسابداریToolStripMenuItem.Text = "حساب داری";
+            this.حسابداریToolStripMenuItem.Click += new System.EventHandler(this.حسابداریToolStripMenuItem_Click);
             // 
             // گزارشاتToolStripMenuItem
             // 
@@ -424,12 +425,14 @@
             this.لیستمرحومهامراسماتToolStripMenuItem.Name = "لیستمرحومهامراسماتToolStripMenuItem";
             this.لیستمرحومهامراسماتToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.لیستمرحومهامراسماتToolStripMenuItem.Text = "مرحوم ها (مراسمات)";
+            this.لیستمرحومهامراسماتToolStripMenuItem.Click += new System.EventHandler(this.لیستمرحومهامراسماتToolStripMenuItem_Click);
             // 
             // اشخاصToolStripMenuItem
             // 
             this.اشخاصToolStripMenuItem.Name = "اشخاصToolStripMenuItem";
             this.اشخاصToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.اشخاصToolStripMenuItem.Text = "اشخاص";
+            this.اشخاصToolStripMenuItem.Click += new System.EventHandler(this.اشخاصToolStripMenuItem_Click);
             // 
             // کرایههاToolStripMenuItem
             // 
@@ -443,6 +446,7 @@
             this.انبارداریToolStripMenuItem.Name = "انبارداریToolStripMenuItem";
             this.انبارداریToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.انبارداریToolStripMenuItem.Text = "انبار داری";
+            this.انبارداریToolStripMenuItem.Click += new System.EventHandler(this.انبارداریToolStripMenuItem_Click);
             // 
             // تنظیماتToolStripMenuItem
             // 

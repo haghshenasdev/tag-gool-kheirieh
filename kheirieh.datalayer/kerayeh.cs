@@ -15,9 +15,9 @@ namespace kheirieh.datalayer
     public partial class kerayeh
     {
         public int id { get; set; }
-        public int usertraf { get; set; }
+        public Nullable<int> usertraf { get; set; }
         public Nullable<int> tarh { get; set; }
-        public int type { get; set; }
+        public Nullable<int> type { get; set; }
         public Nullable<int> ispardakht { get; set; }
         public Nullable<int> amountpay { get; set; }
         public System.DateTime date { get; set; }

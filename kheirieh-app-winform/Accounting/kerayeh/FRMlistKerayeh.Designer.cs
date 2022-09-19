@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbCustomer = new System.Windows.Forms.ComboBox();
+            this.chnp = new System.Windows.Forms.CheckBox();
+            this.chp = new System.Windows.Forms.CheckBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnFilter = new System.Windows.Forms.Button();
             this.txtToDate = new System.Windows.Forms.MaskedTextBox();
@@ -43,7 +45,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgview = new System.Windows.Forms.DataGridView();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.marhom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,6 +59,7 @@
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton3,
             this.toolStripButton5,
             this.toolStripButton2,
             this.toolStripButton4,
@@ -67,6 +69,30 @@
             this.toolStrip1.Size = new System.Drawing.Size(800, 53);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButton3
+            // 
+            this.toolStripButton3.Font = new System.Drawing.Font("A Iranian Sans", 9F);
+            this.toolStripButton3.Image = global::kheirieh_app_winform.Properties.Resources.افزودن;
+            this.toolStripButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton3.Name = "toolStripButton3";
+            this.toolStripButton3.Size = new System.Drawing.Size(49, 50);
+            this.toolStripButton3.Text = "افزودن";
+            this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.Font = new System.Drawing.Font("A Iranian Sans", 9F);
+            this.toolStripButton5.Image = global::kheirieh_app_winform.Properties.Resources.edit;
+            this.toolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(51, 50);
+            this.toolStripButton5.Text = "ویرایش";
+            this.toolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton2
             // 
@@ -105,8 +131,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cbCustomer);
+            this.groupBox1.Controls.Add(this.chnp);
+            this.groupBox1.Controls.Add(this.chp);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.btnFilter);
             this.groupBox1.Controls.Add(this.txtToDate);
@@ -119,34 +145,35 @@
             this.groupBox1.Size = new System.Drawing.Size(776, 75);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "جستجو";
+            this.groupBox1.Text = "فیلتر";
             // 
-            // label4
+            // chnp
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(514, 35);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 14);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "در :";
+            this.chnp.AutoSize = true;
+            this.chnp.Location = new System.Drawing.Point(428, 44);
+            this.chnp.Name = "chnp";
+            this.chnp.Size = new System.Drawing.Size(104, 18);
+            this.chnp.TabIndex = 9;
+            this.chnp.Text = "پرداخت نشده";
+            this.chnp.UseVisualStyleBackColor = true;
             // 
-            // cbCustomer
+            // chp
             // 
-            this.cbCustomer.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCustomer.FormattingEnabled = true;
-            this.cbCustomer.Items.AddRange(new object[] {
-            "همه"});
-            this.cbCustomer.Location = new System.Drawing.Point(438, 31);
-            this.cbCustomer.Name = "cbCustomer";
-            this.cbCustomer.Size = new System.Drawing.Size(70, 22);
-            this.cbCustomer.TabIndex = 8;
+            this.chp.AutoSize = true;
+            this.chp.Location = new System.Drawing.Point(433, 20);
+            this.chp.Name = "chp";
+            this.chp.Size = new System.Drawing.Size(99, 18);
+            this.chp.TabIndex = 8;
+            this.chp.Text = "پرداخت شده";
+            this.chp.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(548, 32);
+            this.textBox1.Location = new System.Drawing.Point(554, 32);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(151, 21);
             this.textBox1.TabIndex = 7;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnFilter
             // 
@@ -156,12 +183,14 @@
             this.btnFilter.TabIndex = 6;
             this.btnFilter.Text = "انجام";
             this.btnFilter.UseVisualStyleBackColor = true;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // txtToDate
             // 
             this.txtToDate.Location = new System.Drawing.Point(100, 32);
             this.txtToDate.Mask = "0000/00/00";
             this.txtToDate.Name = "txtToDate";
+            this.txtToDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtToDate.Size = new System.Drawing.Size(100, 21);
             this.txtToDate.TabIndex = 5;
             this.txtToDate.ValidatingType = typeof(System.DateTime);
@@ -169,7 +198,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(206, 35);
+            this.label3.Location = new System.Drawing.Point(201, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 14);
             this.label3.TabIndex = 4;
@@ -177,9 +206,10 @@
             // 
             // txtFromDate
             // 
-            this.txtFromDate.Location = new System.Drawing.Point(270, 32);
+            this.txtFromDate.Location = new System.Drawing.Point(261, 32);
             this.txtFromDate.Mask = "0000/00/00";
             this.txtFromDate.Name = "txtFromDate";
+            this.txtFromDate.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtFromDate.Size = new System.Drawing.Size(100, 21);
             this.txtFromDate.TabIndex = 3;
             this.txtFromDate.ValidatingType = typeof(System.DateTime);
@@ -187,7 +217,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(376, 35);
+            this.label2.Location = new System.Drawing.Point(361, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 14);
             this.label2.TabIndex = 2;
@@ -225,18 +255,6 @@
             this.dgview.Size = new System.Drawing.Size(776, 322);
             this.dgview.TabIndex = 3;
             this.dgview.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgview_CellClick);
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.Font = new System.Drawing.Font("A Iranian Sans", 9F);
-            this.toolStripButton5.Image = global::kheirieh_app_winform.Properties.Resources.edit;
-            this.toolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(51, 50);
-            this.toolStripButton5.Text = "ویرایش";
-            this.toolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // id
             // 
@@ -320,8 +338,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgview;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbCustomer;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
@@ -330,5 +346,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.CheckBox chnp;
+        private System.Windows.Forms.CheckBox chp;
+        private System.Windows.Forms.ToolStripButton toolStripButton3;
     }
 }

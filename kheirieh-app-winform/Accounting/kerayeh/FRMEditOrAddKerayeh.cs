@@ -1,5 +1,7 @@
 ﻿using kheirieh.datalayer.Context;
 using kheirieh.utility.convertor;
+using kheirieh_app_winform.Accounting.dialog;
+using kheirieh_app_winform.Accounting.dialog.tarh;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,21 +19,67 @@ namespace kheirieh_app_winform.Accounting.kerayeh
         {
             InitializeComponent();
         }
-        public int id;
+
+        public int id = 0;
+        int mid;
+        int? tarhid = null;
+        int? typeid;
+        int? usertarafid;
+
         private void FRMEditOrAddKerayeh_Load(object sender, EventArgs e)
         {
-            using (UnitOfWork db = new UnitOfWork())
+            if (id != 0)
             {
-                var datak = db.NGKerayehRepository.joinbyid(id);
-                txtmName.Text = datak.marhom;
-                dateTimePicker1.Value = datak.date;
-                dateshow.Text = dateTimePicker1.Value.ToShamsi();
-                txttype.Text = datak.type;
-                txttName.Text = datak.usertraf;
-                nAmount.Value = (decimal)datak.amountpay;
-                nCount.Value = (decimal)datak.count;
-                ispardakht.Checked = (datak.ispardakht != null && datak.ispardakht == 1) ? true : false;
+                this.Text = "ویرایش کرایه";
+                btnsave.Text = "ذخیره";
+                using (UnitOfWork db = new UnitOfWork())
+                {
+                    var datak = db.KerayehRepository.GetByID(id);
+                    mid = datak.marhom;
+                    txtmName.Text = getDataM(db, datak.marhom);
+
+                    if (datak.type != null)
+                    {
+                        typeid = datak.type;
+                        txttype.Text = getDataT(db, datak.type);
+                    }
+
+                    if (datak.usertraf != null)
+                    {
+                        usertarafid = datak.usertraf;
+                        txttName.Text = getDataP(db, datak.usertraf);
+                    }
+
+                    if (datak.tarh != null)
+                        txttarh.Text = getDataTarh(db, (int)datak.tarh);
+
+                    dateTimePicker1.Value = datak.date;
+                    dateshow.Text = dateTimePicker1.Value.ToShamsi();
+                    nAmount.Value = (decimal)datak.amountpay;
+                    nCount.Value = (decimal)datak.count;
+                    ispardakht.Checked = (datak.ispardakht != null && datak.ispardakht == 1) ? true : false;
+                }
             }
+        }
+
+        private string getDataTarh(UnitOfWork db, int? id)
+        {
+            return db.TemplateRepository.GetByID(id).name;
+        }
+
+        private string getDataM(UnitOfWork db, int id)
+        {
+            return db.MarhomRepository.GetByID(id).name;
+        }
+
+        private string getDataP(UnitOfWork db, int? id)
+        {
+            return db.PersonRepository.GetByID(id).name;
+        }
+
+        private string getDataT(UnitOfWork db, int? id)
+        {
+            return db.TajRepository.GetByID(id).typename;
         }
 
         private void btncancel_Click(object sender, EventArgs e)
@@ -44,87 +92,98 @@ namespace kheirieh_app_winform.Accounting.kerayeh
             dateshow.Text = dateTimePicker1.Value.ToShamsi();
         }
 
-        int? mid;
-        int? tarhid;
-        int? typeid;
-        int? usertarafid;
         private void btnsave_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("در بروز رسانی های بعدی فعال می شود");
-            //if (mid == null)
-            //{
-            //    using (UnitOfWork db = new UnitOfWork())
-            //    {
-            //        //------------------------
-            //        var dm = db.MarhomRepository.Get(m => m.name == txtmName.Text).FirstOrDefault();
-            //        if (dm != null)
-            //        {
-            //            mid = dm.id;
-            //        }
-            //        else
-            //        {
-            //            if (MessageBox.Show("آیا مایل به ایجاد مرحوم جدید هستید ؟", "مرحومی با این نام یافت نشد!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            //            {
-            //                using (UnitOfWork db2 = new UnitOfWork())
-            //                {
-            //                    db2.MarhomRepository.Insert(new kheirieh.datalayer.marhoom
-            //                    {
-            //                        name = txtmName.Text,
-            //                        date = DateTime.Now
-            //                    });
-            //                    db2.Save();
-            //                }
-            //                mid = db.MarhomRepository.Get().Last().id;
-            //            }
-            //            else return;
-            //        }
-            //        //------------------------
-            //    }
-            //}
-            //if (usertarafid == null)
-            //{
-            //    using (UnitOfWork db = new UnitOfWork())
-            //    {
-            //        var dtaraf = db.PersonRepository.Get(m => m.name == txttName.Text).FirstOrDefault();
-            //        if (dtaraf != null)
-            //        {
-            //            usertarafid = dtaraf.id;
-            //        }
-            //        else
-            //        {
-            //            if (MessageBox.Show("آیا مایل به ایجاد طرف جدید هستید ؟", "طرفی با این نام یافت نشد!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-            //            {
-            //                using (UnitOfWork db2 = new UnitOfWork())
-            //                {
-            //                    db2.PersonRepository.Insert(new kheirieh.datalayer.person
-            //                    {
-            //                        name = txttName.Text,
-            //                    });
-            //                    db2.Save();
-            //                }
-            //                usertarafid = db.PersonRepository.Get().Last().id;
-            //            }
-            //            else return;
-            //        }
-            //        //------------------------
-            //    }
-            //}
-            //using (UnitOfWork db = new UnitOfWork())
-            //{
-            //    db.KerayehRepository.Update(new kheirieh.datalayer.kerayeh()
-            //    {
-            //        id = id,
-            //        ispardakht = (ispardakht.Checked) ? 1 : 0,
-            //        amountpay = (int)nAmount.Value,
-            //        count = (int)nCount.Value,
-            //        date = dateTimePicker1.Value,
-            //        marhom = (int)mid,
-            //        tarh = tarhid,
-            //        type = (int)typeid,
-            //        usertraf = (int)usertarafid
-            //    });
-            //    db.Save();
-            //}
+            using (UnitOfWork db = new UnitOfWork())
+            {
+                var kerdata = new kheirieh.datalayer.kerayeh()
+                {
+                    amountpay = (int)nAmount.Value,
+                    count = (int)nCount.Value,
+                    date = dateTimePicker1.Value,
+                    ispardakht = (ispardakht.Checked) ? 1 : 0,
+                    marhom = mid,
+                    usertraf = usertarafid,
+                    tarh = tarhid,
+                    type = typeid
+                };
+
+                if (id != 0)
+                {
+                    kerdata.id = id;
+                    db.KerayehRepository.Update(kerdata);
+                }
+                else
+                {
+                    db.KerayehRepository.Insert(kerdata);
+                }
+                db.Save();
+            }
+            DialogResult = DialogResult.OK;
+        }
+
+        private void btnchoseType_Click(object sender, EventArgs e)
+        {
+            ChoseDialog cd = new ChoseDialog();
+            cd.type = "anbar";
+            if (cd.ShowDialog() == DialogResult.OK)
+            {
+                typeid = cd.retunedid;
+                using (UnitOfWork db = new UnitOfWork())
+                {
+                    txttype.Text = getDataT(db, typeid);
+                    nAmount.Value = db.TajRepository.GetByID(typeid).amount;
+                }
+            }
+        }
+
+        private void btnChoseMarhoom_Click(object sender, EventArgs e)
+        {
+            ChoseDialog cd = new ChoseDialog();
+            cd.type = "marhoom";
+            if (cd.ShowDialog() == DialogResult.OK)
+            {
+                mid = cd.retunedid;
+                using (UnitOfWork db = new UnitOfWork())
+                {
+                    txtmName.Text = getDataM(db, mid);
+                }
+            }
+        }
+
+        private void btnChosePerson_Click(object sender, EventArgs e)
+        {
+            ChoseDialog cd = new ChoseDialog();
+            cd.type = "person";
+            if (cd.ShowDialog() == DialogResult.OK)
+            {
+                usertarafid = cd.retunedid;
+                using (UnitOfWork db = new UnitOfWork())
+                {
+                    txttName.Text = getDataP(db, usertarafid);
+                }
+            }
+        }
+
+        private void btnChoseTarh_Click(object sender, EventArgs e)
+        {
+            FRMChoseTarh CT = new FRMChoseTarh();
+            if (tarhid != null) CT.retunedid = tarhid;
+
+            if (CT.ShowDialog() == DialogResult.OK)
+            {
+                tarhid = CT.retunedid;
+                using (UnitOfWork db = new UnitOfWork())
+                {
+                    txttarh.Text = getDataTarh(db, (int)tarhid);
+                }
+            }
+        }
+
+        private void btnDelTarh_Click(object sender, EventArgs e)
+        {
+            txttarh.Text = "";
+            tarhid = null;
         }
     }
 }

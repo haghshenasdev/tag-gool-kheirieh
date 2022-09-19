@@ -174,6 +174,7 @@
             this.toolStripButton5.Size = new System.Drawing.Size(103, 51);
             this.toolStripButton5.Text = "مدیریت انبار و  نوع";
             this.toolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton2
             // 
@@ -184,6 +185,7 @@
             this.toolStripButton2.Size = new System.Drawing.Size(57, 51);
             this.toolStripButton2.Text = "مرحوم ها";
             this.toolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton1
             // 
@@ -194,6 +196,7 @@
             this.toolStripButton1.Size = new System.Drawing.Size(50, 51);
             this.toolStripButton1.Text = "اشخاص";
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // groupBox2
             // 

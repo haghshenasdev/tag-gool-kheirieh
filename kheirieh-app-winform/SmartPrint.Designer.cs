@@ -190,6 +190,7 @@
             this.progressBar1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.progressBar1.RightToLeftLayout = true;
             this.progressBar1.Size = new System.Drawing.Size(589, 25);
+            this.progressBar1.Step = 1;
             this.progressBar1.TabIndex = 7;
             // 
             // btndel

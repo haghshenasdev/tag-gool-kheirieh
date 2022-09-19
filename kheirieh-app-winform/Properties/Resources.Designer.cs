@@ -183,6 +183,26 @@ namespace kheirieh_app_winform.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap waitimg {
+            get {
+                object obj = ResourceManager.GetObject("waitimg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap افزودن {
+            get {
+                object obj = ResourceManager.GetObject("افزودن", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap انبارداری {
             get {
                 object obj = ResourceManager.GetObject("انبارداری", resourceCulture);

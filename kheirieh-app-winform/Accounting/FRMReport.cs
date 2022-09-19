@@ -1,4 +1,5 @@
 ﻿using kheirieh.datalayer.Context;
+using kheirieh_app_winform.Accounting;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -45,6 +46,27 @@ namespace kheirieh_app_winform
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             FRMlistKerayeh frm = new FRMlistKerayeh();
+            frm.Show();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            FRMManageRows frm = new FRMManageRows();
+            frm.type = "anbar";
+            frm.Show();
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            FRMManageRows frm = new FRMManageRows();
+            frm.type = "marhoom";
+            frm.Show();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            FRMManageRows frm = new FRMManageRows();
+            frm.type = "person";
             frm.Show();
         }
     }

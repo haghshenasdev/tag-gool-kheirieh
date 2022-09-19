@@ -11,6 +11,7 @@ using kheirieh.utility;
 using kheirieh.datalayer.Context;
 using kheirieh_app_winform.Properties;
 using kheirieh.datalayer;
+using kheirieh_app_winform.Accounting;
 
 namespace kheirieh_app_winform
 {
@@ -446,6 +447,32 @@ namespace kheirieh_app_winform
         private void کرایههاToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FRMlistKerayeh frm = new FRMlistKerayeh();
+            frm.Show();
+        }
+
+        private void حسابداریToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void انبارداریToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRMManageRows frm = new FRMManageRows();
+            frm.type = "anbar";
+            frm.Show();
+        }
+
+        private void لیستمرحومهامراسماتToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRMManageRows frm = new FRMManageRows();
+            frm.type = "marhoom";
+            frm.Show();
+        }
+
+        private void اشخاصToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FRMManageRows frm = new FRMManageRows();
+            frm.type = "person";
             frm.Show();
         }
     }
